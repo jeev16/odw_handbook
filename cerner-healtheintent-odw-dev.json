@@ -1,0 +1,390 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-dev",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROAIQS4XGTNVBR2XREQC:*",
+            "AIDAIHF7WZLRZLPTEQS7U",
+            "AROAIOJINKELY3PZDRATO:*",
+            "AIDAIUODWTLDEEXPDJQFQ",
+            "AROAIZP7N4FDUJEWT5KSU:*",
+            "AIDAIPQ34RKBQPESOZLVC",
+            "AROAJNNLXDAKAT5KWGNSE:*",
+            "AIDAIIQRDPZFTD56NDDCC",
+            "AROAIWD3U6SPTVEZIVPIY:*",
+            "AROAJ5537PCUO23OPVQNI:*",
+            "AIDAI6QJCRB4OV5VFMH7I",
+            "AROATI5UNYTFHUAWJZVYI:*",
+            "AIDATI5UNYTFMIPMZU2O3",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-dev",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userid": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/system_data/credentials/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/system_data/redshift_users/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/reference_data/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROAIWD3U6SPTVEZIVPIY:*",
+            "AROAJ5537PCUO23OPVQNI:*",
+            "AIDAI6QJCRB4OV5VFMH7I",
+            "AROATI5UNYTFHUAWJZVYI:*",
+            "AIDATI5UNYTFMIPMZU2O3",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-dev/data/reference_data/*",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROAIWD3U6SPTVEZIVPIY:*",
+            "AROAJ5537PCUO23OPVQNI:*",
+            "AIDAI6QJCRB4OV5VFMH7I",
+            "AROATI5UNYTFHUAWJZVYI:*",
+            "AIDATI5UNYTFMIPMZU2O3",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:DeleteObject",
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-dev/*",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROAIWD3U6SPTVEZIVPIY:*",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwinfra/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/hiengodwinfra/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwprogramsdev/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/hiengodwprogramsdev/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAJNNLXDAKAT5KWGNSE:*",
+            "AIDAIIQRDPZFTD56NDDCC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwprogramsdev/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIIQRDPZFTD56NDDCC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengdatabackupbigdata/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/hiengdatabackupbigdata/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAIZP7N4FDUJEWT5KSU:*",
+            "AIDAIPQ34RKBQPESOZLVC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengdatabackupbigdata/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIPQ34RKBQPESOZLVC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwcaremanagement/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/hiengodwcaremanagement/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAIOJINKELY3PZDRATO:*",
+            "AIDAIUODWTLDEEXPDJQFQ",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwcaremanagement/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIUODWTLDEEXPDJQFQ",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwregistries/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/hiengodwregistries/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAIQS4XGTNVBR2XREQC:*",
+            "AIDAIHF7WZLRZLPTEQS7U",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwregistries/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIHF7WZLRZLPTEQS7U",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "225327301834"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwdataintelligence/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/archive/hiengodwdataintelligence/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROAJ5537PCUO23OPVQNI:*",
+            "AIDAI6QJCRB4OV5VFMH7I",
+            "AROATI5UNYTFHUAWJZVYI:*",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDATI5UNYTFMIPMZU2O3"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-dev/data/hiengodwdataintelligence/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAI6QJCRB4OV5VFMH7I",
+            "AROATI5UNYTFHUAWJZVYI:*",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDATI5UNYTFMIPMZU2O3"
+          ]
+        }
+      }
+    },
+    {
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::cerner-healtheintent-odw-dev/*",
+        "Condition": {
+            "Bool": {
+                "aws:SecureTransport": "false"
+            }
+        }
+    }
+  ]
+}

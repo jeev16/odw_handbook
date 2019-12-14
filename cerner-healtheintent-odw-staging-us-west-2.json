@@ -1,0 +1,344 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "AROAIQS4XGTNVBR2XREQC:*",
+            "AIDAIHF7WZLRZLPTEQS7U",
+            "AROAIOJINKELY3PZDRATO:*",
+            "AIDAIUODWTLDEEXPDJQFQ",
+            "AROAIZP7N4FDUJEWT5KSU:*",
+            "AIDAIPQ34RKBQPESOZLVC",
+            "AROAJNNLXDAKAT5KWGNSE:*",
+            "AIDAIIQRDPZFTD56NDDCC",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AIDAI5IUZ4WL4FCRAMB3U",
+            "AIDAIL7IPXM2OLAEC32FW",
+            "AIDAIE2ZXUJUHB5KFFCCU",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAI3PL75FEQ77M3NU2K"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userid": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIMIU34ID3VTU6CKEY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/credentials/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/redshift_users/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIMIU34ID3VTU6CKEY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/archive/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/reference_data/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIMIU34ID3VTU6CKEY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/reference_data/*",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIMIU34ID3VTU6CKEY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:DeleteObject",
+      "Resource": "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/*",
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIMIU34ID3VTU6CKEY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwinfra/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/archive/hiengodwinfra/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIMIU34ID3VTU6CKEY"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwprogramsdev/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/archive/hiengodwprogramsdev/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAJNNLXDAKAT5KWGNSE:*",
+            "AIDAIIQRDPZFTD56NDDCC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAI5IUZ4WL4FCRAMB3U"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwprogramsdev/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIIQRDPZFTD56NDDCC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAI5IUZ4WL4FCRAMB3U"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengdatabackupbigdata/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/archive/hiengdatabackupbigdata/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAIZP7N4FDUJEWT5KSU:*",
+            "AIDAIPQ34RKBQPESOZLVC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIL7IPXM2OLAEC32FW"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengdatabackupbigdata/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIPQ34RKBQPESOZLVC",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIL7IPXM2OLAEC32FW"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwcaremanagement/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/archive/hiengodwcaremanagement/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAIOJINKELY3PZDRATO:*",
+            "AIDAIUODWTLDEEXPDJQFQ",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIE2ZXUJUHB5KFFCCU"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwcaremanagement/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIUODWTLDEEXPDJQFQ",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAIE2ZXUJUHB5KFFCCU"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwregistries/*",
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/archive/hiengodwregistries/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AROAIQS4XGTNVBR2XREQC:*",
+            "AIDAIHF7WZLRZLPTEQS7U",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAI3PL75FEQ77M3NU2K"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::cerner-healtheintent-odw-staging-us-west-2/data/hiengodwregistries/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:userId": [
+            "AIDAIHF7WZLRZLPTEQS7U",
+            "AROAI2FHKV23XKPVEREQI:*",
+            "AROAJC4IIZYVJHWPVXCWE:*",
+            "AIDAJMTVWRMRDK5T7EP4Q",
+            "225327301834",
+            "AIDAIMIU34ID3VTU6CKEY",
+            "AROATI5UNYTFO76BYXRBX:*",
+            "AIDAI3PL75FEQ77M3NU2K"
+          ]
+        }
+      }
+    }
+  ]
+}
